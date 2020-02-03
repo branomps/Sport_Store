@@ -6,12 +6,9 @@ using Sport_Store.Models;
 
 namespace Sport_Store.Infrastructure
 {
-    interface IRepository
+    public interface IRepository
     {
-        public interface IRepository
-        {
             IEnumerable<Product> Products { get; }
             void AddProduct(Product product);
-        }
     }
 }
