@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sport_Store.Models;
 using Sport_Store.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Sport_Store
 {
@@ -18,7 +19,7 @@ namespace Sport_Store
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvcCore(option => option.EnableEndpointRouting = false);
+            services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddSingleton<IRepository, DataRepository>();
         }
 
