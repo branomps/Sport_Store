@@ -6,6 +6,7 @@ using Sport_Store.Models;
 using Sport_Store.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
+
 namespace Sport_Store
 {
     public class Startup
@@ -18,8 +19,8 @@ namespace Sport_Store
         {
             services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddTransient<IRepository, DataRepository>();
-           // string conString = Configuration["ConnectionString: DefaultConnection"];
-            services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            string conString = Configuration["ConnectionString:DefaultConnection"];
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(conString));
             
         }
 
